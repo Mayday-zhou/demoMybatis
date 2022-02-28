@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--通过命名区分映射-->
+<mapper namespace="test">  
+	<!--以下为statement-->
+     <insert id="insertStu" parameterType="cn.yao.pojo.Student">
+        insert into student(name,sex) values (#{name},#{sex})
+    </insert>
+<!--    <select id="queryStuList" parameterType="string" resultType="">
+        select  * from student where name like '%${value}'
+    </select>-->
+    <update id="updateStu" parameterType="cn.yao.pojo.Student">
+        update student set  name = #{name} where stuno = #{stuno}
+    </update>
+    <delete id="deleStu" parameterType="int" >
+
+    </delete>
+</mapper>
